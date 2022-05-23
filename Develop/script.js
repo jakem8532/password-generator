@@ -1,5 +1,28 @@
 // Assignment code here
+function generatePassword() {
+  var isSpecial = window.confirm("Would you like to use special characters in your password?")
+  var passwordLength = parseInt(window.prompt("How long would you like your password to be?  Choose between 8 and 128"))
+  console.log(passwordLength)
+  var char = Array.from("abcdefghijklmnopqrstuvwxyz123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+  password = []
 
+  if (isSpecial) {
+    charSpecial = Array.from("!@#$%&")
+    char = char.concat(charSpecial)
+  }
+
+  if (passwordLength >= 8 && passwordLength <= 128) {
+    for (var i = 0; i < passwordLength; i++) {
+      password += char[Math.floor(Math.random() * char.length)]
+      console.log(password)
+    }
+    return password
+
+  }else {
+    passwordLength = parseInt(window.prompt("How long would you like your password to be?  Choose between 8 and 128"))
+  }
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
