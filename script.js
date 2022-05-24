@@ -32,7 +32,7 @@ function generatePassword() {
   }
 
   if (passwordLength >= 8 && passwordLength <= 128) {
-    for (var i = 0; i < passwordLength; i++) {
+    for (var i = 0; i <= passwordLength; i++) {
       password += char[Math.floor(Math.random() * char.length)]
     }
     return password
